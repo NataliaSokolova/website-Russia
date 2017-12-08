@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Welcome to Russia</title>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 80%;
+		margin-bottom: 2%;
+        padding: 0;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html"> Russia</a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myInverseNavbar2">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="culture.html">Culture</a></li>
+        <li><a href="adventures.html">Adventures</a></li>
+        <li><a href="traditions.html">Traditions</a></li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Visit Russia<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+       
+            <li><a href="maps.html">Map of Russia</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="usefulinfo.html">Useful Info</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 hidden-xs">
+        <div id="carousel-299058" class="carousel slide">
+          <ol class="carousel-indicators">
+            <li data-target="#carousel-299058" data-slide-to="0" class=""> </li>
+            <li data-target="#carousel-299058" data-slide-to="1" class="active"> </li>
+            <li data-target="#carousel-299058" data-slide-to="2" class=""> </li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="item"> <img class="img-responsive" src="images/siberia/10.jpg" alt="thumb">
+              <div class="carousel-caption"> </div>
+            </div>
+            <div class="item active"> <img class="img-responsive" src="images/siberia/11.jpg" alt="thumb">
+              <div class="carousel-caption"> </div>
+            </div>
+            <div class="item"> <img class="img-responsive" src="images/siberia/12.jpg" alt="thumb">
+              <div class="carousel-caption"> 
+              </div>
+            </div>
+          </div>
+          <a class="left carousel-control" href="#carousel-299058" data-slide="prev"><span class="icon-prev"></span></a> <a class="right carousel-control" href="#carousel-299058" data-slide="next"><span class="icon-next"></span></a></div>
+      </div>
+    </div>
+    <hr>
+  </div>
+   
+	  <div class="container" id="map"> </div>
+		
+    <script>
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {lat: 60, lng: 94}
+        });
+
+        setMarkers(map);
+      }
+
+      // Data for the markers consisting of a name, a LatLng and a zIndex for the
+      // order in which these markers should display on top of each other.
+      var points = [
+        ['Baikal', 53.5587, 108.164996, 4, 'baikal.html'],
+        ['Siberia', 61.01371, 99.196656, 5, 'siberia.html'],
+        ['Kamchatka', 56.357369, 160.758435, 3, 'kamchatka.html'], 
+        ['Saint Petersburg', 59.93428, 30.335099, 2, 'piter.html'],
+        ['Moscow', 55.755826, 37.6173, 1, 'moscow.html'],
+		['Sochy', 43.672776, 40.294654, 6, 'skiing.html'],
+		['Elbrus', 43.349953, 42.446312, 7, 'skiing.html'],
+		['Dombay', 43.289402, 41.623506, 8, 'skiing.html'],
+		['Oymyakon', 63.464138, 142.773727, 9, 'http://oymyakon.ru']
+		/*['Salehard', 66.550073, 66.602811, 10, 'www.google.com']*/
+		  ];
+		/*['Sochy', 43.672776,40.294654,6]
+       ['Elbrus', 43.349953,42.446312,7]
+		['Dombay', 43.289402,41.623506,8]
+		['Oymyakon', 63.464138,142.773727,9]
+		['Salehard',66.550073,66.602811,10];*/
+	
+      function setMarkers(map) {
+       
+        // Origins, anchor positions and coordinates of the marker increase in the X
+        // direction to the right and in the Y direction down.	  
+     
+       var shape = {
+          coords: [1, 1, 1, 20, 18, 20, 18, 1],
+          type: 'poly'
+        };		  
+		  
+       for (var i = 0; i < points.length; i++) {
+          var point = points[i];
+          var marker = new google.maps.Marker({
+            position: {lat: point[1], lng: point[2]},
+            map: map,            
+            shape: shape,
+            title: point[0],
+            zIndex: point[3],
+			url: point[4]
+		  });
+			
+		  google.maps.event.addListener(marker, 'click', function() {
+    		window.location.href = this.url;
+          });
+      	}
+	  }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjllB90FGHCpJ7RbTdLPC80tWysVvFk6g&callback=initMap">
+    </script>
+ <div class="container well">
+  <div class="row">
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4"> <span class="text-right">
+      </span>
+  <h3>About Russia</h3>
+  <hr>
+  <p>Russia is the largest country in the world. Its area is 17 098.242 thousand square km. The state is located in eastern Europe and northern Asia.</p>
+<p>Russia is the largest country in the world by surface area, covering more than one-eighth of the Earth's inhabited land area and the ninth most populous, with over 144 million people at the end of March 2016.. From north to south the country stretches for over 4,000 km; from west to east – for almost 10,000 km. Russia borders on 16 countries. Extending across the entirety of Northern Asia and much of Eastern Europe, Russia spans eleven time zones and incorporates a wide range of environments and landforms. </p>
+</div>
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4 hidden-sm hidden-xs"> <span class="text-right"> </span>
+  <h3>About Russians</h3>
+  <hr>
+   <div class="media-object-default">
+  <div class="media">
+  <div class="media-body">     
+There are about 120 ethnic groups in Russia who speak more than a hundred languages. Roughly 80 percent of Russians trace their ancestry to the Slavs who settled in the country 1,500 years ago. </div>
+      <div class="media-right"> <a href="https://en.wikipedia.org/wiki/Russians"> <img class="media-object" src="images/traditions/9.jpg" alt="placeholder image"></a></div>
+</div>
+<div class="media">
+  <div class="media-body">
+Russian is the most geographically widespread language of Eurasia,approximately 300 million people around the world at the time mastered the Russian language,making it the 5th most popular language in the world </div>
+  <div class="media-right"> <a href="https://en.wikipedia.org/wiki/Russian_language"> <img class="media-object" src="images/traditions/10.jpg" alt="placeholder image"></a></div>
+</div>
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4"> <span class="text-right"> </span>
+  <h3>Contact Us</h3>
+  <hr>
+
+   <address>
+        <strong>Natalia Sokolova</strong><br>
+        <a href="mailto:#">natalia77sokolova@gmail.com</a>
+      </address>
+</div>
+  </div>
+</div>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© Horizon</p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

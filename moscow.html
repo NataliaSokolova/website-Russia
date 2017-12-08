@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>moscow</title>
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/style1.css">
+
+</head>	
+
+
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myInverseNavbar2" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      <a class="navbar-brand" href="index.html"> Russia</a> </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="myInverseNavbar2">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="culture.html">Culture</a></li>
+       <li><a href="adventures.html">Adventures</a></li>
+       <li><a href="traditions.html">Traditions</a></li>
+        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">Visit Russia<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="maps.html">Map of Russia</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="usefulinfo.html">Useful Info</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+
+
+<h2 style="text-align:center">Moscow</h2>
+
+<div class="row">
+  <div class="column">
+    <img src="images/moscow/1.jpg" style="width:100%" onclick="openModal();currentSlide(1)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/2.jpg" style="width:100%" onclick="openModal();currentSlide(2)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/3.jpg" style="width:100%" onclick="openModal();currentSlide(3)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/4.jpg" style="width:100%" onclick="openModal();currentSlide(4)" class="hover-shadow cursor">
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <img src="images/moscow/5.jpg" style="width:100%" onclick="openModal();currentSlide(5)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/6.jpg" style="width:100%" onclick="openModal();currentSlide(6)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/7.jpg" style="width:100%" onclick="openModal();currentSlide(7)" class="hover-shadow cursor">
+  </div>
+  <div class="column">
+    <img src="images/moscow/8.jpg" style="width:100%" onclick="openModal();currentSlide(8)" class="hover-shadow cursor">
+  </div>
+</div>
+
+<div id="myModal" class="modal">
+  <span class="close cursor" onclick="closeModal()">&times;</span>
+  <div class="modal-content">
+
+    <div class="mySlides">
+      <div class="numbertext">1 / 8</div>
+      <img src="images/moscow/1.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">2 / 8</div>
+      <img src="images/moscow/2.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">3 / 8</div>
+      <img src="images/moscow/3.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">4 / 8</div>
+      <img src="images/moscow/4.jpg" style="width:100%">
+    </div>
+      <div class="mySlides">
+      <div class="numbertext">5 / 8</div>
+      <img src="images/moscow/5.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">6 / 8</div>
+      <img src="images/moscow/6.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides">
+      <div class="numbertext">7/ 8</div>
+      <img src="images/moscow/7.jpg" style="width:100%">
+    </div>
+    
+    <div class="mySlides">
+      <div class="numbertext">8 / 8</div>
+      <img src="images/moscow/8.jpg" style="width:100%">
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+
+
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Moscow is the capital and most populous city of Russia, with 13.2 million residents within the city limits and 17.8 million within the urban area">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/2.jpg" style="width:100%" onclick="currentSlide(2)" alt=" Moscow may look European, but its chaotic spirit is never far beneath the surface ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/3.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Moscow Kremlin usually referred to as the Kremlin, is a fortified complex at the heart of Moscow, overlooking the Moskva River to the south, Saint Basil's Cathedral and Red Square to the east, and the Alexander Garden to the west">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Christianity is the predominant religion in the city, of which the Russian Orthodox Church is the most popular ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Moscow Metro">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/6.jpg" style="width:100%" onclick="currentSlide(6)" alt="New Year's Eve">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/7.jpg" style="width:100%" onclick="currentSlide(7)" alt="The biggest in Russia and Europe artificial ice Skating Rink ">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="images/moscow/8.jpg" style="width:100%" onclick="currentSlide(8)" alt="Bolshoi Theatre">
+    </div>
+  </div>
+</div>
+	<div class = "vid">
+		<div class="video-block"><iframe width="700" height="400" src="https://www.youtube.com/embed/pnN2BNrSrXY" frameborder="0" allowfullscreen></iframe></div>
+	</div>
+<div class="container well">
+  <div class="row">
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4"> <span class="text-right">
+      </span>
+  <h3>About Russia</h3>
+  <hr>
+  <p>Russia is the largest country in the world. Its area is 17 098.242 thousand square km. The state is located in eastern Europe and northern Asia.</p>
+<p>Russia is the largest country in the world by surface area, covering more than one-eighth of the Earth's inhabited land area and the ninth most populous, with over 144 million people at the end of March 2016.. From north to south the country stretches for over 4,000 km; from west to east – for almost 10,000 km. Russia borders on 16 countries. Extending across the entirety of Northern Asia and much of Eastern Europe, Russia spans eleven time zones and incorporates a wide range of environments and landforms. </p>
+</div>
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4 hidden-sm hidden-xs"> <span class="text-right"> </span>
+  <h3>About Russians</h3>
+  <hr>
+   <div class="media-object-default">
+  <div class="media">
+  <div class="media-body">     
+There are about 120 ethnic groups in Russia who speak more than a hundred languages. Roughly 80 percent of Russians trace their ancestry to the Slavs who settled in the country 1,500 years ago. </div>
+      <div class="media-right"> <a href="https://en.wikipedia.org/wiki/Russians"> <img class="media-object" src="images/traditions/9.jpg" alt="placeholder image"></a></div>
+</div>
+<div class="media">
+  <div class="media-body">
+Russian is the most geographically widespread language of Eurasia,approximately 300 million people around the world at the time mastered the Russian language,making it the 5th most popular language in the world </div>
+  <div class="media-right"> <a href="https://en.wikipedia.org/wiki/Russian_language"> <img class="media-object" src="images/traditions/10.jpg" alt="placeholder image"></a></div>
+</div>
+</div>
+</div>
+<div class="col-xs-6 col-sm-6 col-lg-4 col-md-4"> <span class="text-right"> </span>
+  <h3>Contact Us</h3>
+  <hr>
+
+   <address>
+        <strong>Natalia Sokolova</strong><br>
+        <a href="mailto:#">natalia77sokolova@gmail.com</a>
+      </address>
+</div>
+  </div>
+</div>
+<footer class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>©  Horizon </p>
+      </div>
+    </div>
+  </div>
+	</footer>
+
+<script src="js/slideshow.js"></script>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+    
+</body>
+</html>
