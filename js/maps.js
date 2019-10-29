@@ -1,11 +1,5 @@
-// JavaScript Documentfunction initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 3,
-          center: {lat: 60, lng: 94}
-        });
 
-        setMarkers(map);
-      }
+      
 
       // Data for the markers consisting of a name, a LatLng and a zIndex for the
       // order in which these markers should display on top of each other.
@@ -19,13 +13,13 @@
 		['Elbrus', 43.349953, 42.446312, 7, 'skiing.html'],
 		['Dombay', 43.289402, 41.623506, 8, 'skiing.html'],
 		['Oymyakon', 63.464138, 142.773727, 9, 'http://oymyakon.ru']
-		/*['Salehard', 66.550073, 66.602811, 10, 'www.google.com']*/
+		['Salehard', 66.550073, 66.602811, 10, 'www.google.com']
 		  ];
-		/*['Sochy', 43.672776,40.294654,6]
+		['Sochy', 43.672776,40.294654,6]
        ['Elbrus', 43.349953,42.446312,7]
 		['Dombay', 43.289402,41.623506,8]
 		['Oymyakon', 63.464138,142.773727,9]
-		['Salehard',66.550073,66.602811,10];*/
+		['Salehard',66.550073,66.602811,10];
 	
       function setMarkers(map) {
        
@@ -45,14 +39,19 @@
             shape: shape,
             title: point[0],
             zIndex: point[3],
-			url: point[4]
-		  });
+		      	locationUrl: point[4]
+		        });
 			
-		  google.maps.event.addListener(marker, 'click', function() {
-    		window.location.href = this.url;
+		     google.maps.event.addListener(marker, 'click', function() {
+        		window.location.href = this.url;
           });
       	}
 	  }
  
    
    
+
+  
+
+   
+      
